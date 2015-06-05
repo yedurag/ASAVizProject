@@ -15,7 +15,7 @@
 
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript" src="https://rawgithub.com/NickQiZhu/dc.js/master/web/js/crossfilter.js"></script>
-<script src="dc.js"></script>
+<script src="lib/dc.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <style>
 #StatVizHeading1 {
@@ -235,10 +235,10 @@ width: auto;
 <h1>Mapping Research in Statistical Sciences</h1>
 <h2>A Visual Exploration of 8,191 Publications (1991-2014) in the Journals of the American Statistical Association and their 119,459 Citations</h2>
 
- <p>Theyab Alhwiti [1], Fadel M. Megahed [1], L. Allison Jones-Farmer [2] , William H. Woodall [3] and Yedurag Babu [1]</p>
+ <p>Theyab Alhwiti [1], Fadel M. Megahed [1], L. Allison Jones-Farmer [2] , Maria Weese [2] and Yedurag Babu [1]</p>
  <p>[1] Department of Industrial and Systems Engineering, Auburn University, Auburn AL 36849</p>
  <p>[2] Farmer School of Business, Miami University, Oxford, OH 45056</p>
- <p>[3] Department of Statistics, Virginia Tech, Blacksburg, VA 24061</p>
+
 </div>
 
 <div id="StatVizline1">
@@ -249,11 +249,10 @@ width: auto;
 
 <h3><b><font size="4">Research in Statistical Sciences Interactive Visualizations</font></b></h3>
 
-<p align = "justify"> The visualizations below are made possible by 
-		 <a href="http://dc-js.github.io/dc.js/"> dc.js </a>, which is a cool javascript library with native cross filter support for exploration of
-		 multidimensional datasets. 
-		 Other javascript libraries used here are <a href="http://d3js.org/"> d3.js </a>, a highly popular javascript library which has revolutionized 
-		 data visualization and <a href="http://square.github.io/crossfilter/"> crossfilter.js </a>, which enabled fast multidimensional filtering for coordinated
+<p align = "justify"> The javascript libraries used for the visualizations are
+		 <a href="http://dc-js.github.io/dc.js/"> dc.js </a>, with native cross filter support for exploration of
+		 multidimensional datasets, <a href="http://d3js.org/"> d3.js </a>, a highly popular javascript library for data visualization 
+		 and <a href="http://square.github.io/crossfilter/"> crossfilter.js </a>, for fast multidimensional filtering for coordinated
 		 views. 
 		
 		 
@@ -262,20 +261,20 @@ width: auto;
 <p align = "justify">
 The size and scope of the literature on statistics can be overwhelming, which makes it difficult to identify emerging trends and see the relationships between different developments.  
 Visualization techniques, coupled with statistical and data mining methods, have been found effective in achieving these goals in a number of application domains including healthcare and manufacturing research.  
-In this paper, we apply these concepts to the field of statistical sciences.  Our dataset is based on bibliographic information, including but not limited to authors, keywords, abstracts, citations, and funding information, 
-extracted from 8,191 papers published in the 17 journals of the American Statistical Association (ASA) in the period of 1991-2014.  These bibliographic units of analyses allow us to address the following questions: 
-a) What are the main research fields within statistics (based on a data-driven approach)?  b) How do these research fields relate to each other?  c) How do these fields develop over the time period from 1991-2014?  
-And d) What are the main drivers for these publications?  Our results indicate that using bibliometric visualization 
-approaches can provide insights from analyzing the massive amounts of literature that has been published and cited by ASA papers over the past twenty four years.
+In this paper, we apply these concepts to the field of statistical sciences.  Our dataset is based on bibliographic information, including but not limited to authors, keywords, abstracts, citations, and funding information,
+ extracted from 8,191 papers published in the 17 journals of the American Statistical Association (ASA) in the period of 1991-2014.  
+ These bibliographic units of analyses allow us to address the following questions: a) What are the main research fields within statistics (based on a data-driven approach)?  
+ b) How do these research fields relate to each other?  c) How do these fields develop over the time period from 1991-2014?  And d) What are the main drivers for these publications?  
+ Our results indicate that using bibliometric visualization approaches can provide insights from analyzing the
+ massive amounts of literature that has been published and cited by ASA papers over the past twenty four years.
 
 </p>
 
 
 <p align = "justify"> 
-Initially we present a very high level view of the data, focusing on the important dimensions of this multi dimensional data set.
-As we go down this page, we can see more detailed and vivid visualizations, essentially drilling deep down into the dataset to see very important relations.
-Along with this we combine interactivity so that different users can come up with their own interpretations.
-Essentially, as we go from the top to the bottom of this page, we drill deep down into the data set.
+Initially a very high level view of the data is presented, focusing on the important dimensions of this multi dimensional data set.
+The visualizations below focus on exploration as well as interactivity. The narration for each visualization essentially entails the important information obtained from the visualization.
+
 </p>
 
 <div class="clearfix"></div>
@@ -283,16 +282,18 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 <div id="Viz1" > 
         <strong>Journal Names (High Level Exploration)</strong> 
 		<p align = "justify">The chart below explores the variation in number of papers as well 
-		as the number of times they are cited, based on the journals in which the papers were published.This high level exploration provides a birds eye view about the various sects of statistical research.
+		as the number of times they are cited, based on the journals in which the papers were published.This high level exploration provides a high level view about the various sects of statistical research.
 		One important feature that a user has is the ability to filter the data set based on the journal names. By clicking on the 9 bubbles below, the user can filter the dataset based on the journal names.
-		But most importantly this bubble chart shows the popularity {in terms of total times cited on the x axis, times cited on the y axis (These are different because times cited are the number of papers which cited the particular papers in the specified journals and total times cited includes multiple citations within the papers)}
-		of the papers as well as the number of papers in the given journal in terms of the size of the bubbles. The choice of bubble chart 
-		(which is a very bad way to represent quantitative information)
-		here is intentional because the main aim of this chart, is to facilitate interactivity and data filtering, and not detailed visual exploration.
-		Nevertheless we get some important insights from this high level visualization. The order in which the bubbles are arranged in the horizon essentially shows the variation in number of citations as well as the number of statistical research papers in
-		each field of research. While the papers published in JASA (Journal of the American Statistical Association) are cited more, the papers in particular research field journals like Stat. Biopharm. Res.(Statistics in Biopharmaceutical Research) are cited relatively lesser.
-		This shows the popularity of papers published in JASA. Also papers published in specific research journals may not be used generally for statistical research for other fields of study. This essentially shows a hierarchy of citation,
-		 JASA being the primary journal which is cited. But this chart only gives a vague and high level view. Again the primary use of this chart is filtering.</p>
+		But most importantly this bubble chart shows the popularity {in terms of total times cited on the x axis, times cited on the y axis (These are different because times cited are 
+		the number of papers which cited the particular papers in the specified journals and total times cited includes multiple citations within the papers)}
+		of the papers as well as the number of papers in the given journal in terms of the size of the bubbles. 
+		The main aim of this chart, is to facilitate interactivity and data filtering, and not detailed visual exploration.
+		We get some important insights from this high level visualization. The order in which the bubbles are arranged in the horizon essentially shows the variation in number of citations 
+		as well as the number of statistical research papers in
+		each field of research. While the papers published in JASA (Journal of the American Statistical Association) are cited more, the papers in particular research field journals 
+		like Stat. Biopharm. Res.(Statistics in Biopharmaceutical Research) are cited relatively lesser.
+		This shows the popularity of papers published in JASA. Also papers published in specific research journals may not be used generally for statistical research in other fields of study. 
+	</p>
 	
         <a class="reset" href="javascript:Viz1.filterAll();dc.redrawAll();" style="display: none;"></a>
       
@@ -305,10 +306,11 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 <div id="Viz2" > 
         <strong>Time series visualizations</strong> 
 		<p align = "justify">
-		From here on wards, we look at an important aspect of the dataset. We visualize the data set as panel data, looking at the variations over the years. 
+		The visualizations given below is aimed at exploring the data set as panel data, looking at the variations over the years. 
 		The first of these time series visualizations is a high level composite time series chart, showing the variation in statistical research over the years in specific research fields. 
 		It is to be noted that sometimes, the presence of a dominating group overshadows variation in other groups. This can be seen in this dataset too. The number of papers in the general label-"Statistics and Probability"
-		outnumbers the number of papers in all other fields. All these general papers are JASA papers. As a matter of fact all JASA papers have the research field label of "Statistics and Probability". Hence to see the variation in other research fields the user shall eliminate these general papers from the mix. 
+		outnumbers the number of papers in all other fields. All JASA papers have the research field label of "Statistics and Probability". 
+		Hence to see the variation in other research fields the user shall eliminate these general papers from the mix. 
 		To facilitate this filtering, we have provided an extra donut chart below. This filtering can be achieved by clicking on all other segments other than JASA in the donut below.
 		</p>
 		
@@ -321,29 +323,31 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 		</p>
 		
 		<p align = "justify">
-		Certain important observations can be noted from the 1st time series. While the number of papers in fields like Economics, Social Sciences etc. are almost at a constant rate from 1991 till 2014, we can see an increase in Computer Science papers in
+		Certain important observations can be noted from the 1st time series. While the number of papers in fields like Economics, Social Sciences etc. are almost at a constant rate from 1991 till 2014, 
+		we can see an increase in Computer Science papers in
 		the period starting in 2010. This can most probably be attributed to the "Data revolution" which started during this time period.
-		If we look at papers in Statistics and Probability, we see a gradual increase from 2000 onwards compared to the other years. The beginning of the Data revolution and the zest to improve statistical methods for Big Data Analysis may have
+		If we look at papers in Statistics and Probability, we see a gradual increase from 2000 onwards compared to the other years. 
+		The beginning of the Data revolution and increase in usage of statistical methods for Big Data Analysis may have
 		been the reason for this increase in research. Also computational power has increased by many times starting in the 2000's. Compared to 1990's, nowadays researchers can use their personal computers for statistical research.
-		This improvement in computational technology also might have triggered this increase in papers in Statistics and probability. Note that this dataset is not complete. However we have a sample size of 90% which is helpful 
-		in finding prescriptive variations.
+		This improvement in computational technology also might have triggered this increase in papers in Statistics and probability. 
 		 </p>
 		 
 		 <p align = "justify">
-		 While looking at the citations, certain other important observations can be made. The number of citations for Economics related papers have declined gradually from 2003. Surprisingly enough, we see a similar decrease in Economics papers as per another research conducted by
+		 While looking at the citations, certain other important observations can be made. The number of citations for Economics related papers have declined gradually from 2003. Surprisingly enough, we see a similar 
+		 decrease in Economics papers as per another research conducted by
 		 Cardaso et al. in 2010 (<a href="http://ftp.iza.org/dp4785.pdf"> Trends in Economic Research: An International Perspective </a>).
 		 Although the number of statistical papers in the Economics field remained almost constant, the number of citations have decreased. 
 		 We see a similar trend in social sciences too.
 		 However the decrease in citations for Statistics and Probability papers (mostly JASA papers) from 2002 onwards clearly shows that even in the statistical research in 2010's, the techniques from the 1990's are used.
-		 This means that after the dawn of the new millennium, no breakthrough techniques nor research have been conducted in Statistics, which overpowers the techniques found in 1990's. 
+		 This means that after the 1990's, no breakthrough techniques nor research have been conducted in Statistics, which overpowers the techniques found in 1990's. 
 		 However it should be remembered that the number of papers in Statistics and Probability have been increasing from the 2000's. From all this, we can come to the conclusion that the Statistics Research community in 
 		 USA has focused on applying and improving the techniques found earlier. Although it seems not to be a progressive path, the increase in research is clearly a sign of improvement. 
-		 Considering all the facts, it is safe to predict that the research conducted in 2000's may be used in later decades. In fact, Science has many times rolled itself back in the history to acknowledge the importance of seemingly trivial techniques (Remembering Galileo!).
+		 Considering all the facts, it is safe to predict that the research conducted in 2000's may be used in later decades.
 		
 		 </p>
 		 <p align = "justify">
-		  Many other interesting observations can be made by drilling down on the data using the selectivity and filtering options available in these Visualizations.
-		 More time series Visualizations are given below, looking at keywords. These Visualizations are based on the 10 clusters defined in the main paper.
+		  Many other interesting observations can be made by using the selectivity and filtering options available in these Visualizations.
+		 More time series Visualizations are given below, looking at the occurrence of specific keywords in the research papers. These Visualizations are based on the 10 clusters defined in the main article.
 		 There are many more interesting observations given under each of these Visualizations.
 		 </p>
 		 
@@ -374,11 +378,13 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 		as the number of times they are cited, across years. This cluster is named as Reliability/Survival Analysis because of the presence of "Survival Analysis" in this cluster.
 		Other keywords can be found in many other fields of study. For switching between number of papers and citations the same buttons above can be used.</p>
 		<p align = "justify">From looking at the number of papers alone we can see that "Bootstrap" is a keyword which is prominently used in statistical research from 1991 till 2014. This is a certain indication that
-		random re-sampling method will be consistently used through out the evolution of Statistics as it is the backbone of all statistical analysis. "Measurement Error" also consistently appears in the literature through out the years. This is also
+		random re-sampling method will be consistently used through out the evolution of Statistics as it is the backbone of all statistical analysis. "Measurement Error" also consistently appears in the literature 
+		through out the years. This is also
 		intuitive since variance from the true value is always inherent in any kind of analysis. </p>
-		<p align = "justify"> When we look at the number of citations, we can see that the statistical community tend to cite more papers with "Bootstrap", "Measurement Error" etc. in 1990's. This shows that the researches still refer to 
+		<p align = "justify"> When we look at the number of citations, we can see that the statistical community tend to cite more papers with "Bootstrap", "Measurement Error" etc. in 1990's. 
+		This shows that the researches still refer to 
 		seminal papers with these keywords
-		from the 1990's for research. These keywords are from well established realms of statistical analysis. Hence the old papers are still cited although these techniques are used in recent researches too. </p>
+		from the 1990's for their research. These keywords are from well established realms of statistical analysis. Hence the old papers are still cited although these techniques are used in recent researches too. </p>
         <a class="reset" href="javascript:Viz4.filterAll();dc.redrawAll();" style="display: none;"></a>
       
         
@@ -391,7 +397,8 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 		This cluster is named as Time series because of the presence of keywords like "Time Series", "Forecasting" etc. in this cluster.
 		Other keywords can be found in many other fields of study.</p>
 		<p align = "justify"> From looking at this cluster, we can see the same trend as from the 1st cluster. These keywords are used consistently in research through out the years.</p>
-		<p align = "justify"> But when we switch to the number of citations view, we can see that these keywords belong to techniques which are well established. The seminal papers written in 1990's and early 2000's are still cited
+		<p align = "justify"> But when we switch to the number of citations view, we can see that these keywords belong to techniques which are well established.
+		The seminal papers written in 1990's and early 2000's are still cited
 		in recent researches.  </p>
 	
         <a class="reset" href="javascript:Viz5.filterAll();dc.redrawAll();" style="display: none;"></a>
@@ -400,17 +407,18 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
     </div>
 	
 <div id="Viz6" > 
-        <strong>Time Series Cluster 3 - New Methods and Techniques</strong> 
+        <strong>Time Series Cluster 3 - Statistics in Medicine</strong> 
 		<p align = "justify">The time series chart below explores the variation in number of papers as well 
 		as the number of times they are cited. For switching between number of papers and citations the same buttons above can be used.</p>
 		
-		<p align = "justify">This cluster is a really interesting one. We can see some really interesting trends in the usage of certain keywords. 
-		The most striking one is "R". Yes!, It represents the R software, which is the most popular tool for statistical analysis even 22 years after its inception.
+		<p align = "justify">We can see some really interesting trends in the usage of certain keywords in this cluster. 
+		The most interesting trend is in the usage of the keyword "R". It represents the R software, which is the most popular tool for statistical analysis even 22 years after its inception.
 		The explosion of papers using R for the analysis shows how a programming language can also influence research. This strongly agrees with the fact that "Data Science" is an optimal combination
-		of Statistics, Programming and Domain knowledge. Cutting to the chase, there have been an explosion in statistical research papers using R starting from 2004. This strongly correlates with the fact that
+		of Statistics, Programming and Domain knowledge.There have been an explosion in statistical research papers using R starting from 2004. This strongly correlates with the fact that
 		first stable version of R came out in the 2000's and easy data loading feature was added in 2004. After this the widespread insemination of R took place within the Statistical community aided by the usage of internet.
 		<p align = "justify"> Another important trend we can notice is the upward move in the usage of the keyword "Dimension Reduction" from 2000's. Variable selection and Dimensionality reduction are terms associated with
-		Machine learning and the explosion in research in Mcahine learning during the 2000's till now may be the reason behind this. Finally "Visualization" was intentionally included (it did not have that many papers) in this cluster to show an interesting trend. Visualization
+		Machine learning and the explosion in research in Machine learning during the 2000's till now may be the reason behind this. Finally "Visualization" was intentionally included in this cluster to show an interesting trend.
+		Visualization
 		is trending from 2008 onwards. The rise of programming languages like D3 js for interactive web visualizations for exploratory data analysis during this period may have caused it to trend upwards during this period.</p>
 		<p align = "justify">When looking at citations we see that almost all the citations are form the 1990's. But "R" stands out here also. </p>
 		
@@ -421,21 +429,33 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
     </div>
 	
 <div id="Viz7" > 
-        <strong>Time Series Cluster 4-</strong> 
+        <strong>Time Series Cluster 4- Model and Variable Selection </strong> 
 		<p align = "justify">The time series chart below explores the variation in number of papers as well 
 		as the number of times they are cited, across years. For switching between number of papers and citations the same buttons above can be used.</p>
-		<p align = "justify"> All these established methods and techniques are used consistently from 1991 till now.
-		When citations are viewed, we see the same trends as seen in earlier time series </p>
+		<p align = "justify"> This cluster has some keywords related to Model and Variable Selection. The important keywords like Generalized Linear Model, Logistic Regression etc. are well established techniques in
+		modeling and variable selection. From the interactive time series visualization below indicating the variability in number of papers with each of these keywords, we can observe that these 
+		methods and techniques are used consistently from 1991 till now. When the variability in number of citations is considered, we see a similar trend as seen in visualizations given above.
+			The papers in the 1990's containing these keywords are cited more when compared to the ones after 2000. 
+			The spike in "Importance Sampling" in 1995 is to be noted. This can be attributed to the paper titled "BAYES FACTORS" by Robert E. Kass and Adrian E. Raftery which was published in 1995. 
+			It is considered as a seminal paper in Bayesian hypothesis testing.</p>
         <a class="reset" href="javascript:Viz7.filterAll();dc.redrawAll();" style="display: none;"></a>
       
         
     </div>
 	
 <div id="Viz8" > 
-        <strong>Time Series Cluster 5-</strong> 
-		<p align = "justify">For switching between number of papers and citations the same buttons above can be used.
-		These keywords are also used consistently through out the years. The rise in the usage of "Markov Chain Monte Carlo" is to be noted. Again the same trends in the citations can be seen. </p>
-	
+        <strong>Time Series Cluster 5- Data Quality</strong> 
+		<p align = "justify">The time series chart below explores the variation in number of papers as well 
+		as the number of times they are cited, across years. For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">
+		This cluster has some very important keywords connected to Data Quality like Markov Chain Monte Carlo (MCMC), EM Algorithm etc. 
+		While observing the number of papers over the years, the increase in number of papers with MCMC as a keyword is to be noted. This rise in number of papers using MCMC can certainly be attributed to recent increase in usage of MCMC method for 
+		Hierarchical models in Bayesian Statistics. 
+		When observing the number of citations we can see that seminal papers in the 1990's as well as 2000's are cited the most for these important keywords. 
+		The spike in number of citations for MCMC in 1995 can again be attributed to the single seminal paper "BAYES FACTORS" by Robert E. Kass and Adrian E. Raftery mentioned earlier.
+		However the papers in the 2000's with the keyword "Markov Chain Monte Carlo" have also been cited consistently more till 2010. 
+		The earlier mentioned usage of MCMC method for Hierarchical Modelling may be one reason for this. Adding to this, the number of citations for papers with keyword- "Hierarchical Model" is more from 2005 till 2010, which is the same period mentioned above.
+		</p>
         <a class="reset" href="javascript:Viz8.filterAll();dc.redrawAll();" style="display: none;"></a>
       
         
@@ -443,8 +463,13 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 	
 <div id="Viz9" > 
         <strong>Time Series Cluster 6- Computer experiments, Statistical process control and Geo statistics </strong> 
-		<p align = "justify">For switching between number of papers and citations the same buttons above can be used.</p>
-		
+		<p align = "justify">The time series chart below explores the variation in number of papers as well 
+		as the number of times they are cited, across years. For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">This cluster has some important keywords related to Computer experiments, Statistical process control and Geo statistics.
+		When observing the variability in number of papers we can observe the consistent usage of keywords like "Missing Data", "Longitudinal Data" etc. over the years.
+		However, when observing the variability in number of citations, we can observe time series graphs skewed to the left or to the 1990's. Indeed seminal research papers in the 1990's in this area of statistical research is still cited
+		rather than the papers in 2000's.
+		</p>
 	
         <a class="reset" href="javascript:Viz9.filterAll();dc.redrawAll();" style="display: none;"></a>
       
@@ -453,7 +478,14 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 	
 <div id="Viz10" > 
         <strong>Time Series Cluster 7- Models and algorithm </strong> 
-		<p align = "justify">For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">The time series chart below explores the variation in number of papers as well 
+		as the number of times they are cited, across years. For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">This cluster contains some important keywords related to various Statistical Models and Algorithms. 
+		Especially significant is the usage of keywords like "Smoothing", "Random Effect", "Robustness" etc. over the years. 
+		These are very important keywords and these will remain important even as statistical research progresses in the future. 
+		When looking at the number of citations, we see a different trend. Even in the early 2000's important research has been done in this field, indicated by the increase in number of citations for keywords like "Outlier".
+		However after 2005, number of citations has decreased for all of these keywords.
+		</p>
 	
         <a class="reset" href="javascript:Viz10.filterAll();dc.redrawAll();" style="display: none;"></a>
       
@@ -462,7 +494,13 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 	
 <div id="Viz11" > 
         <strong>Time Series Cluster 8- Density Estimation </strong> 
-		<p align = "justify">For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">The time series chart below explores the variation in number of papers as well 
+		as the number of times they are cited, across years. For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">This cluster has certain important keywords related to "Density Estimation". As seen before in the other clusters, the trend which can be observed is the consistent usage 
+		of these keywords from 1991 till 2014. 
+		When looking at the number of citations, one should note the spikes seen in these keywords till 2010. This essentially means that significant research was being done in these areas even in the 2000's.
+		It can be safely predicted that the research in these fields in 2010's will be cited in the research papers in the future.
+		</p>
 	
         <a class="reset" href="javascript:Viz11.filterAll();dc.redrawAll();" style="display: none;"></a>
       
@@ -471,7 +509,14 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
 	
 <div id="Viz12" > 
         <strong>Time Series Cluster 9- Econometrics</strong> 
-		<p align = "justify">For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">The time series chart below explores the variation in number of papers as well 
+		as the number of times they are cited, across years. For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">There are some keywords in this cluster related to the field of Econometrics. However the top keywords (in terms of occurrence in statistical literature)
+		are mostly related to Model selection and Variable Selection. 
+		Some important trends can be seen from this time series. The most notable one is the increase in number of papers using the keyword "Lasso" from the year 2004 onwards. 
+		This essentially points towards the rise in popularity of Shrinkage and Selection methods for Data Mining in the 2010's. The original Lasso paper was published by Tibshirani, R. in 1996 titled, "Regression Shrinkage and 
+		Selection via the Lasso". We can see the impact of "Lasso" from 1998 onwards. </p>
+		
 	
         <a class="reset" href="javascript:Viz12.filterAll();dc.redrawAll();" style="display: none;"></a>
       
@@ -479,9 +524,13 @@ Essentially, as we go from the top to the bottom of this page, we drill deep dow
     </div>
 	
 <div id="Viz13" > 
-        <strong>Time Series Cluster 10</strong> 
-		<p align = "justify">For switching between number of papers and citations the same buttons above can be used.</p>
-	
+        <strong>Time Series Cluster 10 - Statistical Process Control </strong> 
+		<p align = "justify">The time series chart below explores the variation in number of papers as well 
+		as the number of times they are cited, across years. For switching between number of papers and citations the same buttons above can be used.</p>
+		<p align = "justify">Some of the keywords in this cluster are related to the field of Statistical Process Control. This is a relatively smaller cluster. 
+		The most important observation that can be made from this visualization is the decrease in number of citations for papers containing the keyword "Statistical Process Control" after the year 2010.
+		However mostly we can observe the presence of most cited papers in 2000's also. 
+		</p>
         <a class="reset" href="javascript:Viz13.filterAll();dc.redrawAll();" style="display: none;"></a>
       
         
@@ -1807,7 +1856,7 @@ Key3_Clustering_cit:0
 		.shareTitle(false)
         .compose([
             dc.lineChart(Viz8)
-                .colors('#fbb4ae')
+                .colors('#1b9e77')
 				.renderDataPoints(true)
                 .group(viz2group, "Markov Chain Monte Carlo")
 					.renderTitle(true).title(function (d) {
@@ -1817,7 +1866,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#b3cde3')
+                .colors('#d95f02')
 				.renderDataPoints(true)
                 .group(viz2group, "Em Algorithm")
 					.renderTitle(true).title(function (d) {
@@ -1827,7 +1876,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#ccebc5')
+                .colors('#7570b3')
 				.renderDataPoints(true)
                 .group(viz2group, "Gibbs Sampling")
 					.renderTitle(true).title(function (d) {
@@ -1838,7 +1887,7 @@ Key3_Clustering_cit:0
 				
 				
 				dc.lineChart(Viz8)
-                .colors('#decbe4')
+                .colors('#e7298a')
 				.renderDataPoints(true)
                 .group(viz2group, "Hierarchical Model")
 					.renderTitle(true).title(function (d) {
@@ -1848,7 +1897,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#fed9a6')
+                .colors('#66a61e')
 				.renderDataPoints(true)
                 .group(viz2group, "Bayesian Inference")
 					.renderTitle(true).title(function (d) {
@@ -1858,7 +1907,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#ffffcc')
+                .colors('#e6ab02')
 				.renderDataPoints(true)
                 .group(viz2group, "Maximum Likelihood")
 					.renderTitle(true).title(function (d) {
@@ -1868,7 +1917,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#e5d8bd')
+                .colors('#a6761d')
 				.renderDataPoints(true)
                 .group(viz2group, "Mixture Model")
 					.renderTitle(true).title(function (d) {
@@ -1902,7 +1951,7 @@ Key3_Clustering_cit:0
 		.shareTitle(false)
         .compose([
             dc.lineChart(Viz9)
-                .colors('#b3e2cd')
+                .colors('#e41a1c')
 				.renderDataPoints(true)
                 .group(viz2group, "Missing Data")
 					.renderTitle(true).title(function (d) {
@@ -1912,7 +1961,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#fdcdac')
+                .colors('#377eb8')
 				.renderDataPoints(true)
                 .group(viz2group, "Longitudinal Data")
 					.renderTitle(true).title(function (d) {
@@ -1922,7 +1971,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#cbd5e8')
+                .colors('#4daf4a')
 				.renderDataPoints(true)
                 .group(viz2group, "Causal Inference")
 					.renderTitle(true).title(function (d) {
@@ -1933,7 +1982,7 @@ Key3_Clustering_cit:0
 				
 				
 				dc.lineChart(Viz9)
-                .colors('#f4cae4')
+                .colors('#984ea3')
 				.renderDataPoints(true)
                 .group(viz2group, "Generalized Estimating Equation")
 					.renderTitle(true).title(function (d) {
@@ -1943,7 +1992,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#e6f5c9')
+                .colors('#ff7f00')
 				.renderDataPoints(true)
                 .group(viz2group, "Sensitivity Analysis")
 					.renderTitle(true).title(function (d) {
@@ -1953,7 +2002,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#fff2ae')
+                .colors('#ffff33')
 				.renderDataPoints(true)
                 .group(viz2group, "Clustered Data")
 					.renderTitle(true).title(function (d) {
@@ -1963,7 +2012,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#f1e2cc')
+                .colors('#a65628')
 				.renderDataPoints(true)
                 .group(viz2group, "Clinical Trial")
 					.renderTitle(true).title(function (d) {
@@ -3576,7 +3625,7 @@ Key3_Clustering_cit:0
 		.shareTitle(false)
         .compose([
             dc.lineChart(Viz8)
-                .colors('#fbb4ae')
+                .colors('#1b9e77')
 				.renderDataPoints(true)
                 .group(viz2group, "Markov Chain Monte Carlo")
 					.renderTitle(true).title(function (d) {
@@ -3586,7 +3635,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#b3cde3')
+                .colors('#d95f02')
 				.renderDataPoints(true)
                 .group(viz2group, "Em Algorithm")
 					.renderTitle(true).title(function (d) {
@@ -3596,7 +3645,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#ccebc5')
+                .colors('#7570b3')
 				.renderDataPoints(true)
                 .group(viz2group, "Gibbs Sampling")
 					.renderTitle(true).title(function (d) {
@@ -3607,7 +3656,7 @@ Key3_Clustering_cit:0
 				
 				
 				dc.lineChart(Viz8)
-                .colors('#decbe4')
+                .colors('#e7298a')
 				.renderDataPoints(true)
                 .group(viz2group, "Hierarchical Model")
 					.renderTitle(true).title(function (d) {
@@ -3617,7 +3666,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#fed9a6')
+                .colors('#66a61e')
 				.renderDataPoints(true)
                 .group(viz2group, "Bayesian Inference")
 					.renderTitle(true).title(function (d) {
@@ -3627,7 +3676,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#ffffcc')
+                .colors('#e6ab02')
 				.renderDataPoints(true)
                 .group(viz2group, "Maximum Likelihood")
 					.renderTitle(true).title(function (d) {
@@ -3637,7 +3686,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#e5d8bd')
+                .colors('#a6761d')
 				.renderDataPoints(true)
                 .group(viz2group, "Mixture Model")
 					.renderTitle(true).title(function (d) {
@@ -3671,7 +3720,7 @@ Key3_Clustering_cit:0
 		.shareTitle(false)
         .compose([
             dc.lineChart(Viz9)
-                .colors('#b3e2cd')
+                .colors('#e41a1c')
 				.renderDataPoints(true)
                 .group(viz2group, "Missing Data")
 					.renderTitle(true).title(function (d) {
@@ -3681,7 +3730,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#fdcdac')
+                .colors('#377eb8')
 				.renderDataPoints(true)
                 .group(viz2group, "Longitudinal Data")
 					.renderTitle(true).title(function (d) {
@@ -3691,7 +3740,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#cbd5e8')
+                .colors('#4daf4a')
 				.renderDataPoints(true)
                 .group(viz2group, "Causal Inference")
 					.renderTitle(true).title(function (d) {
@@ -3702,7 +3751,7 @@ Key3_Clustering_cit:0
 				
 				
 				dc.lineChart(Viz9)
-                .colors('#f4cae4')
+                .colors('#984ea3')
 				.renderDataPoints(true)
                 .group(viz2group, "Generalized Estimating Equation")
 					.renderTitle(true).title(function (d) {
@@ -3712,7 +3761,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#e6f5c9')
+                .colors('#ff7f00')
 				.renderDataPoints(true)
                 .group(viz2group, "Sensitivity Analysis")
 					.renderTitle(true).title(function (d) {
@@ -3722,7 +3771,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#fff2ae')
+                .colors('#ffff33')
 				.renderDataPoints(true)
                 .group(viz2group, "Clustered Data")
 					.renderTitle(true).title(function (d) {
@@ -3732,7 +3781,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#f1e2cc')
+                .colors('#a65628')
 				.renderDataPoints(true)
                 .group(viz2group, "Clinical Trial")
 					.renderTitle(true).title(function (d) {
@@ -5340,7 +5389,7 @@ Key3_Clustering_cit:0
 		.shareTitle(false)
         .compose([
             dc.lineChart(Viz8)
-                .colors('#fbb4ae')
+                .colors('#1b9e77')
 				.renderDataPoints(true)
                 .group(viz2group, "Markov Chain Monte Carlo")
 					.renderTitle(true).title(function (d) {
@@ -5350,7 +5399,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#b3cde3')
+                .colors('#d95f02')
 				.renderDataPoints(true)
                 .group(viz2group, "Em Algorithm")
 					.renderTitle(true).title(function (d) {
@@ -5360,7 +5409,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#ccebc5')
+                .colors('#7570b3')
 				.renderDataPoints(true)
                 .group(viz2group, "Gibbs Sampling")
 					.renderTitle(true).title(function (d) {
@@ -5371,7 +5420,7 @@ Key3_Clustering_cit:0
 				
 				
 				dc.lineChart(Viz8)
-                .colors('#decbe4')
+                .colors('#e7298a')
 				.renderDataPoints(true)
                 .group(viz2group, "Hierarchical Model")
 					.renderTitle(true).title(function (d) {
@@ -5381,7 +5430,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#fed9a6')
+                .colors('#66a61e')
 				.renderDataPoints(true)
                 .group(viz2group, "Bayesian Inference")
 					.renderTitle(true).title(function (d) {
@@ -5391,7 +5440,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#ffffcc')
+                .colors('#e6ab02')
 				.renderDataPoints(true)
                 .group(viz2group, "Maximum Likelihood")
 					.renderTitle(true).title(function (d) {
@@ -5401,7 +5450,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz8)
-                .colors('#e5d8bd')
+                .colors('#a6761d')
 				.renderDataPoints(true)
                 .group(viz2group, "Mixture Model")
 					.renderTitle(true).title(function (d) {
@@ -5435,7 +5484,7 @@ Key3_Clustering_cit:0
 		.shareTitle(false)
         .compose([
             dc.lineChart(Viz9)
-                .colors('#b3e2cd')
+                .colors('#e41a1c')
 				.renderDataPoints(true)
                 .group(viz2group, "Missing Data")
 					.renderTitle(true).title(function (d) {
@@ -5445,7 +5494,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#fdcdac')
+                .colors('#377eb8')
 				.renderDataPoints(true)
                 .group(viz2group, "Longitudinal Data")
 					.renderTitle(true).title(function (d) {
@@ -5455,7 +5504,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#cbd5e8')
+                .colors('#4daf4a')
 				.renderDataPoints(true)
                 .group(viz2group, "Causal Inference")
 					.renderTitle(true).title(function (d) {
@@ -5466,7 +5515,7 @@ Key3_Clustering_cit:0
 				
 				
 				dc.lineChart(Viz9)
-                .colors('#f4cae4')
+                .colors('#984ea3')
 				.renderDataPoints(true)
                 .group(viz2group, "Generalized Estimating Equation")
 					.renderTitle(true).title(function (d) {
@@ -5476,7 +5525,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#e6f5c9')
+                .colors('#ff7f00')
 				.renderDataPoints(true)
                 .group(viz2group, "Sensitivity Analysis")
 					.renderTitle(true).title(function (d) {
@@ -5486,7 +5535,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#fff2ae')
+                .colors('#ffff33')
 				.renderDataPoints(true)
                 .group(viz2group, "Clustered Data")
 					.renderTitle(true).title(function (d) {
@@ -5496,7 +5545,7 @@ Key3_Clustering_cit:0
                 }),
 				
 				dc.lineChart(Viz9)
-                .colors('#f1e2cc')
+                .colors('#a65628')
 				.renderDataPoints(true)
                 .group(viz2group, "Clinical Trial")
 					.renderTitle(true).title(function (d) {
